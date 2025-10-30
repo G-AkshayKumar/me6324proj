@@ -144,15 +144,6 @@ st.markdown("""
     </style>
 """, unsafe_allow_html=True)
 
-# ------------------------------------------------------
-# 🧠 3️⃣  Load Model (Cached)
-# ------------------------------------------------------
-@st.cache_resource
-def load_model():
-    model = tf.keras.models.load_model("model_resnet50.h5")
-    return model
-
-model = load_model()
 
 # ------------------------------------------------------
 # 🚆 4️⃣  Header
@@ -215,3 +206,4 @@ if uploaded_file is not None:
 
 else:
     st.warning("👆 Please upload an image to begin detection.")
+
