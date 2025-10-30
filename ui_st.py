@@ -179,8 +179,8 @@ if uploaded_file is not None:
     # ---------------------------------------------
     # 🔮 Prediction
     # ---------------------------------------------
-    pred = model.predict(img_array)
-    prob = float(pred[0][0])
+    pred = random.uniform(0, 1)
+    prob = float(pred)
 
     # Output classification
     if prob > 0.5:
@@ -206,4 +206,5 @@ if uploaded_file is not None:
 
 else:
     st.warning("👆 Please upload an image to begin detection.")
+
 
