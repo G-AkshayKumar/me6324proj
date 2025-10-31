@@ -155,7 +155,7 @@ st.write("### Upload a railway track image to classify it as **Defective** or **
 # 📸 5️⃣  File Upload
 # ------------------------------------------------------
 uploaded_file = st.file_uploader("Upload Railway Track Image", type=["jpg", "jpeg", "png"])
-
+import time
 if uploaded_file is not None:
     # Layout columns: Left = image, Right = output
     col1, col2 = st.columns([1, 1])
@@ -167,6 +167,8 @@ if uploaded_file is not None:
             img = Image.open(uploaded_file).convert("RGB")
             st.image(img, caption="📷 Uploaded Image", use_container_width=True)
             st.markdown("</div>", unsafe_allow_html=True)
+
+    time.sleep(3)
 
     # ---------------------------------------------
     # 🧩 Preprocessing
@@ -206,5 +208,6 @@ if uploaded_file is not None:
 
 else:
     st.warning("👆 Please upload an image to begin detection.")
+
 
 
