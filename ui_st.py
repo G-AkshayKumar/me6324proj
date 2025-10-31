@@ -167,8 +167,8 @@ if uploaded_file is not None:
             img = Image.open(uploaded_file).convert("RGB")
             st.image(img, caption="📷 Uploaded Image", use_container_width=True)
             st.markdown("</div>", unsafe_allow_html=True)
-
-    time.sleep(3)
+    with st.spinner("🔍 Detecting track condition..."):
+        time.sleep(3)
 
     # ---------------------------------------------
     # 🧩 Preprocessing
@@ -208,6 +208,7 @@ if uploaded_file is not None:
 
 else:
     st.warning("👆 Please upload an image to begin detection.")
+
 
 
 
